@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kebun Antioksidan</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #294c32;
+  background: #edf7df;
+}
+
+header {
+  text-align: center;
+  padding: 35px 15px;
+  background: linear-gradient(#bce9fa, #e5f5d5);
+}
+
+header h1 {
+  font-size: 38px;
+  color: #28643a;
+  margin: 10px;
+}
+
+header p {
+  font-size: 17px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  background: #d5eabf;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-weight: bold;
+  background: #43894d;
+  color: white;
+}
+
+button:hover {
+  background: #28643a;
+}
+
+nav button {
+  background: white;
+  color: #28643a;
+}
+
+section {
+  display: none;
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 25px;
+  background: #fffdf3;
+  border-radius: 20px;
+  border: 3px solid #c7dfa9;
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  color: #28643a;
+}
+
+.garden {
+  text-align: center;
+  padding: 30px;
+  font-size: 45px;
+  background: linear-gradient(#d9f2ff 50%, #a7d17d 50%);
+  border-radius: 20px;
+  margin: 20px 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.food {
+  padding: 20px;
+  border-radius: 15px;
+  background: #edf7df;
+  text-align: center;
+  border: 2px solid #c7dfa9;
+  cursor: pointer;
+}
+
+.food span {
+  display: block;
+  font-size: 40px;
+}
+
+.info {
+  background: #e8f3ff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 18px;
+  line-height: 1.6;
+}
+
+.simulation {
+  text-align: center;
+  padding: 25px;
+  background: #fff1ca;
+  border-radius: 18px;
+}
+
+.circle {
+  display: inline-grid;
+  place-items: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #ffd6d6;
+  border: 4px solid #df8585;
+  font-size: 35px;
+  margin: 15px;
+}
+
+.stable {
+  background: #d8f0c8;
+  border-color: #68a65c;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  background: #edf7df;
+  color: #294c32;
+  border: 2px solid #c7dfa9;
+  text-align: left;
+}
+
+.option:hover {
+  background: #d9edc8;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div style="font-size:55px">🌻🦋🌱🌳</div>
+  <h1>KEBUN ANTIOKSIDAN</h1>
+  <p>Selamat datang! Mari terokai dunia bahan antioksidan.</p>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">🌱 Kebun</button>
+  <button onclick="showPage('learn')">📖 Kenali</button>
+  <button onclick="showPage('simulation')">🧪 Simulasi</button>
+  <button onclick="showPage('food')">🥕 Tanaman</button>
+  <button onclick="showPage('quiz')">🏆 Kuiz</button>
+</nav>
+
+<section id="home" class="active">
+  <h2>🌱 Misi Kebun Antioksidan</h2>
+
+  <div class="garden">
+    ☀️<br>
+    🌳 🌻 🌷 🌼 🌳<br>
+    🥕 🍊 🍈 🍠
+  </div>
+
+  <p>
+    Hai, saintis muda! Hari ini kita akan meneroka kebun
+    untuk mengetahui bagaimana bahan antioksidan membantu
+    melindungi sel daripada kerosakan akibat radikal bebas.
+  </p>
+
+  <button onclick="showPage('learn')">
+    Mulakan penerokaan →
+  </button>
+</section>
+
+<section id="learn">
+  <h2>📖 Kenali Radikal Bebas dan Antioksidan</h2>
+
+  <h3>⚡ Apakah radikal bebas?</h3>
+  <p>
+    Radikal bebas ialah zarah yang mempunyai elektron
+    tidak berpasangan dan sangat reaktif.
+  </p>
+
+  <div class="garden">
+    ⚡ 🔴 ⚡
+    <p style="font-size:17px">
+      Radikal bebas boleh bertindak balas dengan komponen
+      sel dan menyebabkan kerosakan.
+    </p>
+  </div>
+
+  <h3>🌿 Apakah bahan antioksidan?</h3>
+  <p>
+    Bahan antioksidan ialah bahan yang membantu melindungi
+    sel daripada kerosakan akibat radikal bebas.
+  </p>
+
+  <div class="info">
+    <b>Fakta penting:</b><br>
+    Sesetengah antioksidan menderma elektron atau atom
+    hidrogen kepada radikal bebas untuk membantu
+    menstabilkannya.
+  </div>
+
+  <button onclick="showPage('simulation')">
+    Teruskan ke simulasi →
+  </button>
+</section>
+
+<section id="simulation">
+  <h2>🧪 Simulasi: Misi Menstabilkan Radikal Bebas</h2>
+
+  <p>
+    Bolehkah kamu membantu menstabilkan radikal bebas?
+    Tekan butang untuk melihat tindakan antioksidan!
+  </p>
+
+  <div class="simulation">
+    <div>
+      <div class="circle" id="radical">⚡</div>
+      <div>Radikal bebas</div>
+    </div>
+
+    <h2>＋</h2>
+
+    <div>
+      <div class="circle">🌿</div>
+      <div>Antioksidan</div>
+    </div>
+
+    <p id="simulationText">
+      Radikal bebas belum stabil.
+    </p>
+
+    <button onclick="donateElectron()">
+      🌿 Dermakan Elektron
+    </button>
+
+    <button onclick="resetSimulation()">
+      Ulang Semula
+    </button>
+  </div>
+
+  <div class="info">
+    Apabila antioksidan menderma elektron, radikal bebas
+    dapat distabilkan. Ini membantu mengurangkan tindak
+    balas berantai yang boleh merosakkan sel.
+  </div>
+</section>
+
+<section id="food">
+  <h2>🥕 Terokai Tanaman Berkhasiat</h2>
+
+  <p>
+    Klik setiap tanaman untuk mengetahui jenis
+    antioksidan yang terkandung di dalamnya.
+  </p>
+
+  <div class="cards">
+
+    <div class="food" onclick="foodInfo('Vitamin C',
+    'Oren mengandungi vitamin C yang bertindak sebagai antioksidan.')">
+      <span>🍊</span>
+      <b>Oren</b>
+    </div>
+
+    <div class="food" onclick="foodInfo('Vitamin C',
+    'Jambu batu merupakan sumber vitamin C.')">
+      <span>🍈</span>
+      <b>Jambu Batu</b>
+    </div>
+
+    <div class="food" onclick="foodInfo('Vitamin E',
+    'Badam mengandungi vitamin E yang mempunyai aktiviti antioksidan.')">
+      <span>🥜</span>
+      <b>Badam</b>
+    </div>
+
+    <div class="food" onclick="foodInfo('Vitamin E',
+    'Biji bunga matahari merupakan salah satu sumber vitamin E.')">
+      <span>🌻</span>
+      <b>Biji Bunga Matahari</b>
+    </div>
+
+    <div class="food" onclick="foodInfo('Beta-karotena',
+    'Lobak merah mengandungi beta-karotena yang mempunyai aktiviti antioksidan.')">
+      <span>🥕</span>
+      <b>Lobak Merah</b>
+    </div>
+
+    <div class="food" onclick="foodInfo('Beta-karotena',
+    'Ubi keledek berisi oren mengandungi beta-karotena.')">
+      <span>🍠</span>
+      <b>Ubi Keledek</b>
+    </div>
+
+  </div>
+
+  <div class="info" id="foodInfo">
+    Klik tanaman untuk melihat maklumat.
+  </div>
+</section>
+
+<section id="quiz">
+  <h2>🏆 Cabaran Kebun Antioksidan</h2>
+
+  <p id="question"></p>
+
+  <div id="answers"></div>
+
+  <p id="feedback"></p>
+
+  <button id="nextButton" onclick="nextQuestion()"
+  style="display:none">
+    Soalan Seterusnya →
+  </button>
+</section>
+
+<footer>
+  🌻 Kebun Antioksidan | Pembelajaran Sains Tingkatan 4 🌻
+</footer>
+
+<script>
+
+function showPage(id) {
+  document.querySelectorAll("section").forEach(
+    section => section.classList.remove("active")
+  );
+
+  document.getElementById(id).classList.add("active");
+}
+
+let completed = false;
+
+function donateElectron() {
+  if (completed) return;
+
+  completed = true;
+
+  document.getElementById("radical").textContent = "✓";
+  document.getElementById("radical").classList.add("stable");
+
+  document.getElementById("simulationText").textContent =
+    "Bagus! Antioksidan telah menderma elektron dan membantu menstabilkan radikal bebas.";
+}
+
+function resetSimulation() {
+  completed = false;
+
+  document.getElementById("radical").textContent = "⚡";
+  document.getElementById("radical").classList.remove("stable");
+
+  document.getElementById("simulationText").textContent =
+    "Radikal bebas belum stabil.";
+}
+
+function foodInfo(name, description) {
+  document.getElementById("foodInfo").innerHTML =
+    "<b>" + name + "</b><br>" + description;
+}
+
+const questions = [
+  {
+    q: "1. Mengapakah radikal bebas sangat reaktif?",
+    options: [
+      "Mempunyai elektron tidak berpasangan",
+      "Mempunyai terlalu banyak air",
+      "Tidak mempunyai nukleus"
+    ],
+    answer: 0,
+    explanation: "Radikal bebas mempunyai elektron tidak berpasangan."
+  },
+  {
+    q: "2. Bagaimanakah sesetengah antioksidan membantu menstabilkan radikal bebas?",
+    options: [
+      "Menderma elektron atau atom hidrogen",
+      "Menambahkan radikal bebas",
+      "Menghapuskan semua sel"
+    ],
+    answer: 0,
+    explanation: "Sesetengah antioksidan menderma elektron atau atom hidrogen."
+  },
+  {
+    q: "3. Antara berikut, yang manakah sumber vitamin E?",
+    options: [
+      "Oren",
+      "Badam",
+      "Lobak merah"
+    ],
+    answer: 1,
+    explanation: "Badam merupakan salah satu sumber vitamin E."
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function displayQuestion() {
+  answered = false;
+
+  const q = questions[currentQuestion];
+
+  document.getElementById("question").textContent = q.q;
+
+  document.getElementById("answers").innerHTML = "";
+
+  q.options.forEach((option, index) => {
+    const button = document.createElement("button");
+
+    button.textContent = option;
+    button.className = "option";
+
+    button.onclick = () => checkAnswer(index);
+
+    document.getElementById("answers").appendChild(button);
+  });
+
+  document.getElementById("feedback").textContent = "";
+  document.getElementById("nextButton").style.display = "none";
+}
+
+function checkAnswer(index) {
+  if (answered) return;
+
+  answered = true;
+
+  const q = questions[currentQuestion];
+
+  if (index === q.answer) {
+    score++;
+    document.getElementById("feedback").textContent =
+      "Betul! 🌟 " + q.explanation;
+  } else {
+    document.getElementById("feedback").textContent =
+      "Belum tepat. 🌱 " + q.explanation;
+  }
+
+  document.querySelectorAll(".option").forEach(
+    button => button.disabled = true
+  );
+
+  document.getElementById("nextButton").style.display = "block";
+}
+
+function nextQuestion() {
+  currentQuestion++;
+
+  if (currentQuestion < questions.length) {
+    displayQuestion();
+  } else {
+    document.getElementById("question").textContent =
+      "🏆 Misi Selesai!";
+
+    document.getElementById("answers").innerHTML =
+      "Markah anda: " + score + " / " + questions.length;
+
+    document.getElementById("feedback").textContent =
+      score === 3
+      ? "Hebat! Anda pakar Kebun Antioksidan! 🌻"
+      : "Bagus mencuba! Teruskan belajar! 🌱";
+
+    document.getElementById("nextButton").textContent =
+      "Cuba Semula";
+
+    document.getElementById("nextButton").onclick =
+      restartQuiz;
+  }
+}
+
+function restartQuiz() {
+  currentQuestion = 0;
+  score = 0;
+
+  document.getElementById("nextButton").onclick =
+    nextQuestion;
+
+  document.getElementById("nextButton").textContent =
+    "Soalan Seterusnya →";
+
+  displayQuestion();
+}
+
+displayQuestion();
+
+</script>
+
+</body>
+</html>
